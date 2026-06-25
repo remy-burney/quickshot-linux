@@ -75,3 +75,7 @@ quickshot-linux
 
 See `docs/snap-store.md` for the publishing checklist and suggested store
 listing copy.
+
+## License
+
+MIT

@@ -16,6 +16,7 @@ description: |
   Current internal paths, command names, extension UUID, and settings schema
   retain the original lightshot-linux identifier for compatibility.
 icon: snap/gui/quickshot-linux.svg
+license: MIT
 source-code: https://github.com/remy-burney/quickshot-linux
 issues: https://github.com/remy-burney/quickshot-linux/issues
 website: https://github.com/remy-burney/quickshot-linux
