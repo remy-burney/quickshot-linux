@@ -1,10 +1,10 @@
 {
   "uuid": "lightshot-linux@remy.local",
-  "name": "Lightshot Linux",
+  "name": "Quickshot Linux",
   "description": "Lightshot-style local screenshot selection and annotation for Ubuntu GNOME Wayland.",
   "shell-version": [
     "50"
   ],
   "settings-schema": "org.gnome.shell.extensions.lightshot-linux",
-  "url": "https://github.com/local/lightshot-linux"
+  "url": "https://github.com/remy-burney/quickshot-linux"
 }

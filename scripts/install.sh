@@ -79,7 +79,7 @@ else
   printf 'Extension copied to %s. Log out and back in if GNOME has not discovered it yet, then run: gnome-extensions enable %s\n' "${EXT_DIR}" "${UUID}"
 fi
 
-printf 'Installed Lightshot Linux.\n'
+printf 'Installed Quickshot Linux.\n'
 printf 'Helper: %s\n' "${HELPER_LINK}"
 printf 'Capture command: %s\n' "${CAPTURE_LINK}"
 printf 'Extension: %s\n' "${EXT_DIR}"

@@ -1,8 +1,18 @@
-# Lightshot Linux
+# Quickshot Linux
 
 Lightshot-style local screenshot selection and annotation for Ubuntu GNOME Wayland.
 
 This project uses a GNOME Shell extension for the parts Wayland protects, including the `Print` shortcut, full-screen overlay, and screenshot capture. A .NET 10 helper renders the final PNG with SkiaSharp and can copy it to the Wayland clipboard through `wl-copy`.
+
+The current install paths, command names, extension UUID, and settings schema still use the original `lightshot-linux` identifier for compatibility.
+
+## Requirements
+
+- Ubuntu GNOME on Wayland.
+- GNOME Shell 50.
+- .NET 10 SDK, used by the installer to publish the helper.
+- `glib-compile-schemas`, `gsettings`, and `gnome-extensions`.
+- `wl-copy` from `wl-clipboard` for clipboard copy support.
 
 ## Install
 

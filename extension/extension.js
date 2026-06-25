@@ -22,7 +22,7 @@ const DBUS_XML = `<node>
         <method name="StartCapture" />
     </interface>
 </node>`;
-const LOG_PREFIX = '[Lightshot Linux]';
+const LOG_PREFIX = '[Quickshot Linux]';
 
 const TOOLS = {
     PEN: 'pen',
@@ -351,7 +351,7 @@ class LightshotOverlay extends St.Widget {
             imageActor.set({ contentGravity: Clutter.ContentGravity.RESIZE_FILL });
             this.add_child(imageActor);
         } catch (error) {
-            logError(error, 'Lightshot Linux failed to load screenshot background');
+            logError(error, 'Quickshot Linux failed to load screenshot background');
         }
     }
 
@@ -1127,18 +1127,18 @@ class LightshotOverlay extends St.Widget {
 
             debug(`export succeeded save=${save} copy=${copy}`);
             if (save && copy)
-                Main.notify('Lightshot Linux', `Saved and copied ${outputPath}`);
+                Main.notify('Quickshot Linux', `Saved and copied ${outputPath}`);
             else if (save)
-                Main.notify('Lightshot Linux', `Saved ${outputPath}`);
+                Main.notify('Quickshot Linux', `Saved ${outputPath}`);
             else
-                Main.notify('Lightshot Linux', 'Copied screenshot to clipboard');
+                Main.notify('Quickshot Linux', 'Copied screenshot to clipboard');
 
             if (!closeBeforeWait)
                 this._closeAfterExport();
         } catch (error) {
-            logError(error, 'Lightshot Linux export failed');
+            logError(error, 'Quickshot Linux export failed');
             debug(`export failed ${error.message}`);
-            Main.notify('Lightshot Linux', error.message);
+            Main.notify('Quickshot Linux', error.message);
             if (!closeBeforeWait)
                 this._busy = false;
         } finally {
@@ -1471,9 +1471,9 @@ export default class LightshotLinuxExtension extends Extension {
             });
             this._overlay.open();
         } catch (error) {
-            logError(error, 'Lightshot Linux capture failed');
+            logError(error, 'Quickshot Linux capture failed');
             debug(`capture failed ${error.message}`);
-            Main.notify('Lightshot Linux', error.message);
+            Main.notify('Quickshot Linux', error.message);
             try {
                 Gio.File.new_for_path(sourcePath).delete(null);
                 Gio.File.new_for_path(tempDirectory).delete(null);

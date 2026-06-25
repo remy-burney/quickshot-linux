@@ -4,7 +4,7 @@
     <key name="capture-shortcut" type="as">
       <default>['Print']</default>
       <summary>Capture shortcut</summary>
-      <description>Keyboard shortcut used to start Lightshot Linux selection.</description>
+      <description>Keyboard shortcut used to start Quickshot Linux selection.</description>
     </key>
     <key name="save-directory" type="s">
       <default>'~/Pictures/Screenshots'</default>
