@@ -3,6 +3,11 @@ obj/
 dist/
 *.zip
 *.nupkg
+*.snap
+parts/
+prime/
+stage/
+.snapcraft/
 extension/schemas/gschemas.compiled
 .idea/
 .vscode/

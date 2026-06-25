@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Quickshot Linux Setup
+Comment=Install or repair the Quickshot Linux GNOME Shell integration
+Exec=quickshot-linux
+Icon=${SNAP}/meta/gui/quickshot-linux.svg
+Terminal=true
+Categories=Utility;GNOME;
+Keywords=screenshot;capture;annotation;wayland;gnome;
+StartupNotify=false

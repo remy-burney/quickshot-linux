@@ -58,3 +58,20 @@ dotnet test LightshotLinux.slnx
 ```
 
 The extension package is written to `dist/`.
+
+## Snap Store
+
+Quickshot Linux includes initial Snapcraft packaging for Ubuntu App Center /
+Snap Store publishing. The snap uses classic confinement because it installs a
+per-user GNOME Shell extension and helper wrappers in locations GNOME Shell can
+load.
+
+```bash
+sudo snap install snapcraft --classic
+snapcraft
+sudo snap install ./quickshot-linux_0.1.0_amd64.snap --dangerous --classic
+quickshot-linux
+```
+
+See `docs/snap-store.md` for the publishing checklist and suggested store
+listing copy.

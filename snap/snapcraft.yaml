@@ -1,0 +1,63 @@
+name: quickshot-linux
+title: Quickshot Linux
+base: core24
+version: '0.1.0'
+summary: Lightshot-style screenshot selection and annotation for GNOME Wayland.
+description: |
+  Quickshot Linux provides local screenshot area selection and annotation on
+  Ubuntu GNOME Wayland.
+
+  The snap installs an integration helper. Run quickshot-linux once after
+  installing the snap to copy the GNOME Shell extension and user helper
+  wrappers into the locations GNOME Shell expects. The extension owns the Print
+  shortcut, displays the full-screen selection overlay, and calls the bundled
+  .NET/SkiaSharp renderer to save or copy annotated screenshots.
+
+  Current internal paths, command names, extension UUID, and settings schema
+  retain the original lightshot-linux identifier for compatibility.
+icon: snap/gui/quickshot-linux.svg
+source-code: https://github.com/remy-burney/quickshot-linux
+issues: https://github.com/remy-burney/quickshot-linux/issues
+website: https://github.com/remy-burney/quickshot-linux
+grade: stable
+confinement: classic
+
+apps:
+  quickshot-linux:
+    command: bin/quickshot-linux-install
+  install:
+    command: bin/quickshot-linux-install
+  uninstall:
+    command: bin/quickshot-linux-uninstall
+  capture:
+    command: bin/lightshot-linux-capture
+  helper:
+    command: LightshotLinux.ImageTool
+
+parts:
+  helper:
+    source: .
+    plugin: dotnet
+    dotnet-version: "10.0"
+    dotnet-project: src/LightshotLinux.ImageTool/LightshotLinux.ImageTool.csproj
+    dotnet-self-contained: true
+    dotnet-publish-properties:
+      PublishSingleFile: "true"
+      DebugType: "none"
+      DebugSymbols: "false"
+    stage-packages:
+      - wl-clipboard
+
+  integration:
+    source: .
+    plugin: dump
+    organize:
+      scripts/install-from-snap.sh: bin/quickshot-linux-install
+      scripts/uninstall-snap-integration.sh: bin/quickshot-linux-uninstall
+      scripts/lightshot-linux-capture: bin/lightshot-linux-capture
+      extension: share/quickshot-linux/extension
+    prime:
+      - bin/quickshot-linux-install
+      - bin/quickshot-linux-uninstall
+      - bin/lightshot-linux-capture
+      - share/quickshot-linux/extension/**
