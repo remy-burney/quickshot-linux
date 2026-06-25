@@ -6,6 +6,9 @@ This project uses a GNOME Shell extension for the parts Wayland protects, includ
 
 The current install paths, command names, extension UUID, and settings schema still use the original `lightshot-linux` identifier for compatibility.
 
+<img width="1440" height="810" alt="image" src="https://github.com/user-attachments/assets/4bdca3bb-0ba7-46ce-83a2-e47d937f3fa2" />
+
+
 ## Requirements
 
 - Ubuntu GNOME on Wayland.
