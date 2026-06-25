@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist>
+  <schema id="org.gnome.shell.extensions.lightshot-linux" path="/org/gnome/shell/extensions/lightshot-linux/">
+    <key name="capture-shortcut" type="as">
+      <default>['Print']</default>
+      <summary>Capture shortcut</summary>
+      <description>Keyboard shortcut used to start Lightshot Linux selection.</description>
+    </key>
+    <key name="save-directory" type="s">
+      <default>'~/Pictures/Screenshots'</default>
+      <summary>Save directory</summary>
+      <description>Directory where Ctrl+S stores annotated screenshots.</description>
+    </key>
+    <key name="default-color" type="s">
+      <default>'#ff0000'</default>
+      <summary>Default drawing color</summary>
+      <description>Initial color used by annotation tools.</description>
+    </key>
+    <key name="stroke-width" type="i">
+      <default>4</default>
+      <range min="1" max="80"/>
+      <summary>Stroke width</summary>
+      <description>Default width for pen, line, arrow, and rectangle tools.</description>
+    </key>
+    <key name="highlighter-width" type="i">
+      <default>18</default>
+      <range min="4" max="120"/>
+      <summary>Highlighter width</summary>
+      <description>Default width for the highlighter tool.</description>
+    </key>
+    <key name="text-size" type="i">
+      <default>24</default>
+      <range min="8" max="144"/>
+      <summary>Text size</summary>
+      <description>Default text annotation size.</description>
+    </key>
+  </schema>
+</schemalist>

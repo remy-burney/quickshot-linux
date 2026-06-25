@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/LightshotLinux.ImageTool/LightshotLinux.ImageTool.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/LightshotLinux.ImageTool.Tests/LightshotLinux.ImageTool.Tests.csproj" />
+  </Folder>
+</Solution>
