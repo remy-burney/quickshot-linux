@@ -26,7 +26,7 @@ mkdir -p "${EXT_DIR}"
 cp -a "${ROOT_DIR}/extension/." "${EXT_DIR}/"
 glib-compile-schemas "${EXT_DIR}/schemas"
 
-: > "${BACKUP_FILE}"
+BACKUP_TMP="$(mktemp "${APP_DIR}/print-keybinding-backup.XXXXXX")"
 CUSTOM_BINDINGS="$(gsettings get org.gnome.settings-daemon.plugins.media-keys custom-keybindings | tr -d "[],'")"
 for path in ${CUSTOM_BINDINGS}; do
   schema="org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:${path}"
@@ -40,12 +40,17 @@ for path in ${CUSTOM_BINDINGS}; do
       printf 'name=%s\n' "${name}"
       printf 'command=%s\n' "${command}"
       printf 'binding=%s\n\n' "${binding}"
-    } >> "${BACKUP_FILE}"
+    } >> "${BACKUP_TMP}"
 
     gsettings set "${schema}" binding "''"
     printf 'Cleared existing Print binding at %s; backup written to %s\n' "${path}" "${BACKUP_FILE}"
   fi
 done
+if [[ -s "${BACKUP_TMP}" ]]; then
+  mv "${BACKUP_TMP}" "${BACKUP_FILE}"
+else
+  rm -f "${BACKUP_TMP}"
+fi
 
 python3 - "${UUID}" <<'PY'
 import ast
