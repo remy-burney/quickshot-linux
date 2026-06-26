@@ -20,6 +20,8 @@ license: MIT
 source-code: https://github.com/remy-burney/quickshot-linux
 issues: https://github.com/remy-burney/quickshot-linux/issues
 website: https://github.com/remy-burney/quickshot-linux
+# Snap Store category and screenshots are listing metadata managed after upload.
+# Use category "Productivity" and the screenshots in snap/store/screenshots/.
 grade: stable
 confinement: classic
 

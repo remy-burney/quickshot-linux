@@ -8,6 +8,7 @@ parts/
 prime/
 stage/
 .snapcraft/
+snapcraft-login.txt
 extension/schemas/gschemas.compiled
 .idea/
 .vscode/

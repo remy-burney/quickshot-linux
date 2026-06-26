@@ -89,6 +89,24 @@ wrappers and keybinding integration needed for this workflow.
 
 ## Store listing
 
+Primary website:
+
+```text
+https://github.com/remy-burney/quickshot-linux
+```
+
+Source code:
+
+```text
+https://github.com/remy-burney/quickshot-linux
+```
+
+Category:
+
+```text
+Productivity
+```
+
 Suggested summary:
 
 ```text
@@ -113,6 +131,10 @@ quickshot-linux in a terminal to install or repair the GNOME Shell integration.
 ## Store assets
 
 - Icon: `snap/gui/quickshot-linux.svg`
-- Screenshots: capture real screenshots on Ubuntu GNOME Wayland after installing
-  the snap from `edge`. Use the selection overlay, annotation toolbar, and a
-  saved annotated image so App Center users can see the actual workflow.
+- Screenshots:
+  - `snap/store/screenshots/quickshot-linux-overlay.jpeg`
+  - `snap/store/screenshots/quickshot-linux-annotated.png`
+
+The Snapcraft project file supports `website` and `source-code` metadata, which
+are set in `snap/snapcraft.yaml`. Store category and screenshots are managed in
+the Snap Store listing after upload; use the category and screenshot files above.
